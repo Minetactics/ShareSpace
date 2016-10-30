@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ShareSpace</title>
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/data.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+	<meta charset="utf-8">
+	<meta name="description" content="Le site ShareSpace est un lieu d'echange entre internautes cinephiles! Contact us here...">
+</head>
+<body>
+    <header>
+        <ul class="topnav" id="myTopnav">
+            <li><a class="active" href="home.html" id="home-icon"><img src="../img/home-grey.png"></a></li>
+            <li><a href="playlist.html">Playlist</a></li>
+            <li><a href="movie-list.html">Movies</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li class="icon">
+                <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+            </li>
+        </ul>
+        <script src="../script/Navmenutop.js">
+        </script>
+    </header>
+	<div id="body">
+		<div class="middle-box">
+            <div class="contact-form">
+                <form>
+                    <h2>Contact us: </h2>
+                    <div class="form-line"><span class="contact-form">Name :</span><input type="text" name="first-name" class="text-query" placeholder="Enter name..." required><span class="required">*</span></div>
+                    <div class="form-line"><span class="contact-form">E-mail address :</span><input type="email" name="email-adress" class="text-query" placeholder="Enter e-mail adress" required><span class="required">*</span></div>
+                    <div class="form-line-textarea"><span class="contact-form">Leave a comment :</span><textarea name="contact-comment" rows="20" cols="50" class="text-query" placeholder="Add a comment here..." required></textarea><span class="required">*</span></div>
+                    <div class="form-line"><input type="submit" value="submit" id="submit-button"></div>
+                </form>
+            </div>
+        </div>
+	</div>
+	<div class="clear"></div>
+	<footer>
+		<div class="presentation">
+			<h3>About us :</h3>
+			<p>ShareSpace is a website made for sharing of personnal or professional reviews. We also wish to provide a space to share playlists of movies with friends, or the general public all the same.</p>
+			<p>The creator of this website is Joseph Sallembien, student of HEI engineering school. He was tasked with it's creation for a class project. The objective was to create a website from scratch without using any premade code or bootstrap. Furthermore, we wished to create it without template whatsoever to show the full extent of possibilities from simple typing in simple txt files!</p>
+			<p>All rights reserved...</p>
+		</div>
+		<div class="bottom-nav">
+			<h3>Sitemap :</h3>
+			<nav>
+				<a href="home2.html">Home</a>
+				<a href="movie-list.html">Movie List</a>
+				<a href="playlist.html">Playlists</a>
+				<a href="contact.html"> Contact us</a>
+				<a href="legal-notice.html">Legal Notice</a>
+			</nav>
+		</div>
+	</footer>
+</body>
+</html>

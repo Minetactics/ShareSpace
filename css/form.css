@@ -1,0 +1,149 @@
+/*This is the form and rating system*/
+
+div.form-line{
+    height: 20px;
+	width: 100%;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+div.rating{
+	position: relative;
+	width: 100%
+}
+
+#commentaire form div#rate{
+	width: 100%;
+	height: 50px;
+	vertical-align: middle;
+}
+
+div#commentaire{
+	margin-left: 40px;
+}
+
+span.form{
+	float: left;
+	padding-right: 10px;
+	width: 120px;
+}
+
+form {
+    float: left;
+    width: 100%;
+    padding: 1rem;
+}
+
+#playlist-form span.required, span.required {
+    margin-left: 5px;
+    font-weight: bolder;
+    width: 15px;
+}
+
+.required:hover{
+    color: firebrick;
+}
+
+.form-line-textarea {
+    height: auto;
+}
+
+/*stars*/
+
+.starRating:not(old){
+  display        : inline-block;
+  width          : 7.5em;
+  height         : 1.5em;
+  overflow       : hidden;
+  vertical-align : bottom;
+}
+
+.starRating:not(old) > input{
+  margin-right : -100%;
+  opacity      : 0;
+}
+
+.starRating:not(old) > label{
+  display         : block;
+  float           : right;
+  position        : relative;
+  background      : url('../img/star-off.png');
+  background-size : contain;
+}
+
+.starRating:not(old) > label:before{
+  content         : '';
+  display         : block;
+  width           : 1.5em;
+  height          : 1.5em;
+  background      : url('../img/star-on.png');
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+
+.starRating:not(old) > label:hover:before,
+.starRating:not(old) > label:hover ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before{
+  opacity : 1;
+}
+
+input.text-query{
+	border-radius: 5px;
+
+}
+
+input#submit-button{
+	border-radius: 5px;
+	border: 1px solid #2a4d69;
+	text-transform: uppercase;
+	padding: 3px;
+	width:5em;
+	text-align: center;
+	margin-left: 15em;
+}
+
+/*contact us*/
+/*Form*/
+.contact-form {
+    float: left;
+	padding-right: 15px;
+	width: 150px;
+}
+
+div.contact-form {
+    position: relative;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%
+}
+
+/*creation of a new playlist*/
+div#create-playlist {
+    width: 100%;
+    height: 200px;
+}
+
+/*creation form*/
+#playlist-form form{
+   float: left;
+    width: 100%;    
+}
+
+#playlist-form span {
+    float: left;
+    width: 250px;
+}
+
+#playlist-form input {
+    float: left;
+}
+
+/*Existing playlist found through search or most relevant showed*/
+#playlist-created {
+    width: 100%;
+    position: relative;
+}
+.add-movie span, #playlist-created span {
+    margin-left: 45%;
+}

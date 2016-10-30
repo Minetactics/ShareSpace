@@ -1,0 +1,282 @@
+
+/*body (background style)*/
+body{
+    overflow-x: hidden;
+	background-color: #F0F0F0;
+	margin: 0px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 0.9em;
+}
+
+
+/*header (top navigation menu)*/
+header{
+	z-index: 2;
+	position: fixed;
+	top:0px;
+	left: 0px;
+	right: 0px;
+	background-color: #252525;
+}
+
+/*navigation menu at the top*/
+header ul li a img {
+    transition: 0.3s;
+    width: 15px;
+    height: auto;
+}
+
+header ul li:hover a img{
+    width: 25px;
+    height: auto;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #252525;
+}
+
+ul.topnav li {float: left;
+color: #E0E0E0;
+width: 15%;}
+
+ul.topnav li a {
+    width: 100%;
+    color: #E0E0E0;
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+ul.topnav li a:hover {background-color: #A0A0A0; border-bottom: 2px solid white;}
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+
+/*Main corpus of the webpage*/
+div#body{
+	position: relative;
+	margin-top: 75px;
+}
+
+[type="search-bar"] {
+   -webkit-appearance: textfield;
+   -webkit-box-sizing: content-box;
+   -moz-appearance:textfield;
+   -moz-box-sizing:content-box;
+}
+
+.search-bar{
+	margin-top: 15px;
+	float: right;
+	margin-right: 15px;
+}
+
+/*Little box that contains an article (hidden unless targeted)*/
+#left-box div.hidden-box{
+	display: none;
+}
+
+#left-box div.hidden-box:target{
+    padding-top: 100px;
+	display: inline-block;
+}
+
+/*left half of the main-body div*/
+#left-box{
+	float: left;
+	width: 50%;
+}
+
+
+#left-box ol{
+	padding-left: 20px;
+	margin-left: 30px;
+	font-size: 1.4em;
+	text-decoration: none;
+	color: black;
+}
+
+#left-box ol li a{
+	text-decoration: none;
+	color: black;
+}
+
+#left-box ol li a:hover{
+	color: #63ace5;
+	text-decoration: underline;
+}
+
+/*middle-box is a common style for left, right and full size boxes*/
+.middle-box h2, .full-body h2{
+	margin-left: 30px;
+	font-size: 1.6em;
+	color: #4b86b4;
+	text-decoration: underline;
+}
+
+.middle-box article, .full-body article{
+	border: 2px solid black;
+    background-color: 	#4b86b4;
+    box-shadow: 2px 2px 1px black;
+	border-radius: 5px;
+	padding: 15px;
+	margin-left: 30px;
+	margin-right: 30px;
+	text-align: justify;
+}
+
+.middle-box article h3, .full-body article h3{
+	margin-top: 0px;
+	text-decoration: underline;
+	font-size: 1.3em;
+}
+
+.middle-box img{
+	float: left;
+	width: 148px;
+	height: 210px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+/*right-box represents the right half of the main body*/
+#right-box{
+	float: right;
+	width: 50%;
+}
+
+/*hr is a line to seperate left and right boxes when they become top and bottom (for a screen smaller 840px)*/
+hr{
+    display: none;
+}
+@media screen and (max-width:840px){
+    
+    #left-box {
+        width: 100%;
+        float: left;
+    }
+    
+    hr {
+        display: block;
+        margin-top: 25px;
+        z-index: 5;
+        }
+    
+    #right-box {
+        width: 100%;
+        float: left;
+    }
+    
+}
+
+/*full box is a div that takes the full main part of the webpage*/
+.full-box {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/*clear is a div that helps seperate the middle boxes (no matter size) from the footer*/
+.clear{
+	position: relative;
+	clear: both;
+}
+
+/*the footer is the bottom fix part that holds a "sitemap" (bottom-nav) and a couple infos (presentation)*/
+footer{
+	position: relative;
+	margin-top: 10px;
+	background-color: #252525;
+	height: 250px;
+    width: 100%;
+    overflow: hidden;
+}
+
+@media screen and (max-width:840px){
+    
+    footer{
+        height: 500px;
+    }
+    
+    footer div.bottom-nav{
+display: inline-block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding-bottom: 20px;
+        padding-left: 25px;
+        
+    }
+    
+    footer div.presentation{
+        margin: 0;
+        padding: 20px auto;
+    }
+}
+
+footer div.presentation{
+	float: left;
+	width: 70%;
+}
+.presentation {
+	padding-left: 25px;
+	text-align: justify;
+	padding-right: 50px;
+}
+
+footer div.bottom-nav{
+	float: right;
+	width: 20%;
+}
+
+footer h3{
+	text-decoration: none;
+	color: #adcbe3;
+	font-size: 1.2em;
+}
+
+footer p {
+    color: white;
+}
+
+.bottom-nav nav a{
+	display: block;
+	margin-top: 5px;
+	color: #e7eff6;
+	text-decoration: none;
+	font-size: 1em;
+	margin-left: 15px;
+}

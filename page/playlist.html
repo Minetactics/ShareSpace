@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ShareSpace</title>
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/data.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+	<meta charset="utf-8">
+	<meta name="description" content="Le site ShareSpace est un lieu d'echange entre internautes cinephiles! Les playlist des internautes...">
+</head>
+<body>
+    <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=31904747297";
+                fjs.parentNode.insertBefore(js, fjs);
+                }
+             (document, 'script', 'facebook-jssdk'));
+        </script>
+	    <header>
+        <ul class="topnav" id="myTopnav">
+            <li><a class="active" href="home.html" id="home-icon"><img src="../img/home-grey.png"></a></li>
+            <li><a href="playlist.html">Playlist</a></li>
+            <li><a href="movie-list.html">Movies</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li class="icon">
+                <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+            </li>
+        </ul>
+        <script src="../script/Navmenutop.js">
+        </script>
+    </header>
+	<div id="body">
+		<div class="middle-box" id="left-box">
+			<div id="create-playlist">
+                <form id="playlist-form" method="post">
+                    <div class="form-line"><span>Enter the name of the playlist :</span><input type="text" name="playlist-name" placeholder="Insert name here" class="playlist-form" required><span class="required">*</span></div>
+                    <div class="form-line"><span>Number of movies in the playlist :</span><input type="number" max="20" min="1" step="1" name="number"> (max. 20)</div>
+                    <div class="form-line"><span id="NewMovie">Add a movie :</span>
+                        <select name="movie-in-playlist" required>
+                            <option></option>
+                            <!--Les options seront transmises depuis le serveur-->
+                        </select><span class="required">*</span>
+                    </div>
+                    <div class="form-line"><span> Add a description : </span><input type="text" name="playlist-description" placeholder="Add a description to your playlist..."> (max. 200 words)</div>
+                    <div class="form-line"><span><input type="submit" value="Create!" name="playlist-create"></span></div>
+                </form>
+            </div>
+            <div id="playlist-created">
+                 <!-- Trigger/Open The Modal -->
+                <div class="form-line"><span><button id="myBtn">Send as</button></span></div>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">×</span>
+                            <h2>Share with: </h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>By Facebook :</p>
+                            <div class="fb-share-button" data-href="http://sharespace.com/playlist/get-$&#123;playlist&#125;" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsharespace.com%2Fplaylist%2Fget-%24%257Bplaylist%257D&amp;src=sdkpreparse">Share</a></div>
+                            <p>By Google+ :</p>
+                            <div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://sharespace.com/playlist/get-${playlist}"></div>
+                            <script type="text/javascript">
+                                window.___gcfg = {lang: 'fr'};
+
+                                (function() {
+                                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                    po.src = 'https://apis.google.com/js/platform.js';
+                                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                                })();
+                            </script>
+                            <p> By URL :</p>
+                            <div class="url-share"><a href="http://sharespace.com/playlist/$get-${playlist}.html">http://sharespace.com/playlist/$get-${playlist}.html</a></div>
+                        </div>
+                    </div>
+                </div>
+                <script src="../script/Modalappear.js">
+                </script>
+            </div>
+		</div>
+		<div class="middle-box" id="right-box">
+            <hr color="black" width="80%" size="0.5">
+            <div class="search-bar">
+                <form name="someform" action="$_GET" class="search">
+			         <span>Search for a playlist :<input type="search-bar" name="movie-search" placeholder="Search..."></span>
+			         <input type="image" width="100" value="submit" src="../img/search-off.png" alt="submit Button" onMouseOut="this.src='../img/search-off.png';" onMouseOver="this.src='../img/search-on.png';" id="search-icon">
+		          </form>
+            </div>
+        </div>
+        <div class="playlist-table">
+            <table>
+                <tr>
+                    <th>Nom de Playlist</th>
+                    <th>Image</th>
+                    <th>Createur</th>
+                    <th>Description</th>
+                    <th>Taille</th>
+                    <th>Liste des films</th>
+                </tr>
+                <tr>
+                    <td>Chillance de l'extrême</td>
+                    <td><img src="../img/chillance.jpg" alt="Image de la couverture"></td>
+                    <td>Jojo la fripouille</td>
+                    <td>Cette playlist sert juste à chiller le dimanche pour faire passer le temps et surtout la gueule de bois...</td>
+                    <td>10</td>
+                    <td>
+                        <ul>
+                            <li>White House Down</li>
+                            <li>Drive</li>
+                            <li>Fast & Furious : Tokyo Drift</li>
+                            <li>James Bond : Skyfall</li>
+                            <li>Zack and Miri Make a Porno</li>
+                            <li>Pineapple Express</li>
+                            <li>The Notebook</li>
+                            <li>Le Premier Jour du Reste de Ta Vie</li>
+                            <li>Jackass 3D</li>
+                            <li>Limitless</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+	</div>
+	<div class="clear"></div>
+	<footer>
+		<div class="presentation">
+			<h3>About us :</h3>
+			<p>ShareSpace is a website made for sharing of personnal or professional reviews. We also wish to provide a space to share playlists of movies with friends, or the general public all the same.</p>
+			<p>The creator of this website is Joseph Sallembien, student of HEI engineering school. He was tasked with it's creation for a class project. The objective was to create a website from scratch without using any premade code or bootstrap. Furthermore, we wished to create it without template whatsoever to show the full extent of possibilities from simple typing in simple txt files!</p>
+			<p>All rights reserved...</p>
+		</div>
+		<div class="bottom-nav">
+			<h3>Sitemap :</h3>
+			<nav>
+				<a href="home2.html">Home</a>
+				<a href="movie-list.html">Movie List</a>
+				<a href="playlist.html">Playlists</a>
+				<a href="contact.html"> Contact us</a>
+				<a href="legal-notice.html">Legal Notice</a>
+			</nav>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ShareSpace</title>
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/data.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+	<meta charset="utf-8">
+	<meta name="description" content="Le site ShareSpace est un lieu d'echange entre internautes cinephiles! Find a review or let one for any movie...">
+</head>
+<body>
+	    <header>
+        <ul class="topnav" id="myTopnav">
+            <li><a class="active" href="home.html" id="home-icon"><img src="../img/home-grey.png"></a></li>
+            <li><a href="playlist.html">Playlist</a></li>
+            <li><a href="movie-list.html">Movies</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li class="icon">
+                <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+            </li>
+        </ul>
+        <script src="../script/Navmenutop.js">
+        </script>
+    </header>
+	<div id="body">
+        <div class="full-body">
+            <div class="review-search">
+                <h2>Search for a Movie to get a review :</h2>
+                <form name="someform" method="get" class="search">
+                    <span>Search for a movie :<input type="search-bar" name="movie-search" placeholder="Search..."></span>
+                    <input type="image" width="100" value="submit" src="../img/search-off.png" alt="submit Button" onMouseOut="this.src='../img/search-off.png';" onMouseOver="this.src='../img/search-on.png';" id="search-icon">
+                </form>
+            </div>
+            <div class="review-result">
+                <h2>The Movie Review</h2>
+                <article> Ici les films apparaitront en résultat...
+                    <h3>Le titre du film</h3>
+                    <img src="../img/${film-trouve}.jpg" alt="Cover de ${film-trouve}">
+                    <p><strong>Star-Rating :</strong> ${rating}/5</p>
+                    <p><strong>Review :</strong> blablablabla</p>
+                </article>
+            </div>
+        </div>
+	</div>
+	<div class="clear"></div>
+	<footer>
+		<div class="presentation">
+			<h3>About us :</h3>
+			<p>ShareSpace is a website made for sharing of personnal or professional reviews. We also wish to provide a space to share playlists of movies with friends, or the general public all the same.</p>
+			<p>The creator of this website is Joseph Sallembien, student of HEI engineering school. He was tasked with it's creation for a class project. The objective was to create a website from scratch without using any premade code or bootstrap. Furthermore, we wished to create it without template whatsoever to show the full extent of possibilities from simple typing in simple txt files!</p>
+			<p>All rights reserved...</p>
+		</div>
+		<div class="bottom-nav">
+			<h3>Sitemap :</h3>
+			<nav>
+				<a href="home2.html">Home</a>
+				<a href="movie-list.html">Movie List</a>
+				<a href="playlist.html">Playlists</a>
+				<a href="contact.html"> Contact us</a>
+				<a href="legal-notice.html">Legal Notice</a>
+			</nav>
+		</div>
+	</footer>
+</body>
+</html>

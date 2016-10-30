@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ShareSpace</title>
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/data.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+	<meta charset="utf-8">
+	<meta name="description" content="Le site ShareSpace est un lieu d'echange entre internautes cinephiles! This is the home of a movie database of over...">
+</head>
+<body>
+	    <header>
+        <ul class="topnav" id="myTopnav">
+            <li><a class="active" href="home.html" id="home-icon"><img src="../img/home-grey.png"></a></li>
+            <li><a href="playlist.html">Playlist</a></li>
+            <li><a href="movie-list.html">Movies</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li class="icon">
+                <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+            </li>
+        </ul>
+        <script src="../script/Navmenutop.js">
+        </script>
+    </header>
+	<div id="body">
+            <div class="add-movie">
+                <span>Add a movie : <button id="myBtn"><img id="add-movie" src="../img/Add-movie.png"></button></span>
+            </div>
+                <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">×</span>
+                            <h2>Add a Movie </h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-content" id="new-movie-modal">
+                                <form id="add-movie" method="post">
+                                    <div class="form-line"><span>Movie Name :</span><input type="text" name="new-movie-name" placeholder="Add movie name" required><span class="required">*</span></div>
+                                    <div class="form-line"><span>Add a Description :</span><input type="text" name="new-movie-desc" placeholder="Add the plot..." required><span class="required">*</span></div>
+                                    <div class="form-line"><span>Give a Rating</span> 
+                                        <select required>
+                                            <option>G</option>
+                                            <option>PG</option>
+                                            <option>PG-13</option>
+                                            <option>NC-17</option>
+                                            <option>R</option>
+                                            <option>Unknown</option>
+                                        </select>
+                                        <span class="required">*</span>
+                                    </div>
+                                    <div class="form-line"><input type="submit" value="Add New Movie!"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="../script/Modalappear.js">
+                </script>
+		<div class="search-bar">
+            <form name="someform" action="$_GET" class="search">
+                <span>Search for a movie :<input type="search-bar" name="movie-search" placeholder="Search..."></span>
+                <input type="image" width="100" value="submit" src="../img/search-off.png" alt="submit Button" onMouseOut="this.src='../img/search-off.png';" onMouseOver="this.src='../img/search-on.png';" id="search-icon">
+            </form>
+		</div>
+        <div class="full-box">
+            <table id="database">
+                <tr>
+                    <th>Title</th>
+                    <th>StarRating</th>
+                    <th>Plot</th>
+                    <th>Rating</th>
+                    <th>Genre</th>
+                    <th>Director</th>
+                    <th>Creator</th>
+                    <th>TheaterDate</th>
+                    <th>DVDDate</th>
+                    <th>BoxOffice</th>
+                    <th>Runtime</th>
+                    <th>Studio</th>
+                </tr>
+                <tr>
+                    <td>The Lord of the Rings: The Return of the King</td>
+                    <td>4.8/5</td> 
+                    <td><span class="plot">................................. ................................. ........................................... ................. .......... .................</span></td>
+                    <td>PG-13</td> 
+                    <td>Action; Adventure; Drama; Science-Fiction; Fantasy</td>
+                    <td>Peter Jackson</td>
+                    <td>Peter Jackson; Fran Walsh; Stephen Sinclair; Philippa Boyens</td>
+                    <td>Dec 11 2002</td>
+                    <td>Aug 25 2003</td>
+                    <td>339,700K</td>
+                    <td>180m</td>
+                    <td>New Line Cinema</td>
+                </tr>
+                <tr>
+                    <td>Pulp Fiction</td>
+                    <td>4.7/5</td> 
+                    <td><span class="plot">................... ...................................... ......................... ........................... ........... .................................</span></td>
+                    <td>R</td>
+                    <td>Drama</td>
+                    <td>Quentin Tarantino</td>
+                    <td>Quentin Tarantino; Roger Avary</td>
+                    <td>Sep 22 1994</td>
+                    <td>May 18 1998</td>
+                    <td>NA</td>
+                    <td>154m</td>
+                    <td>Miramax Films</td>
+                </tr>
+                <tr>
+                    <td>Eternal Sunshine of the Spotless Mind</td>
+                    <td>4.5/5</td> 
+                    <td><span class="plot">....... .................... ................................. ..................................... .................................... ....................</span></td>
+                    <td>R</td>
+                    <td>Comedy; Drama; Fantasy; Romance</td>
+                    <td>Michael Gondry</td>
+                    <td>Charlie Kaufman</td>
+                    <td>Mar 18 2004</td>
+                    <td>Sep 27 2004</td>
+                    <td>34,126K</td>
+                    <td>108m</td>
+                    <td>Focus Features</td>
+                </tr>
+                <tr>
+                    <td>The Revenant</td>
+                    <td>4.5/5</td>                     
+                    <td><span class="plot">........ .......................................... ................................. ................................... ................... ................</span></td>
+                    <td>R</td> 
+                    <td>Action; Adventure; Drama</td>
+                    <td>Alejandro Iñ&aacute;rritu</td>
+                    <td>Alejandro Iñ&aacute;rritu</td>
+                    <td>Dec 24 2015</td>
+                    <td>Apr 18 2016</td>
+                    <td>NA</td>
+                    <td>156m</td>
+                    <td>20th Century Fox</td>
+                </tr>
+                <tr>
+                    <td>There's Something About Mary</td>
+                    <td>4.3/5</td>                     
+                    <td><span class="plot">......................... .................... .................................... ............................ ................ ............................</span></td>
+                    <td>R</td>
+                    <td>Comedy</td>
+                    <td>Bobby Farrelly; Peter Farrelly</td>
+                    <td>Bobby Farrelly; Peter Farrelly; Edward Decter; John J. Strauss</td>
+                    <td>Jul 14 1998</td>
+                    <td>Aug 2 1999</td>
+                    <td>NA</td>
+                    <td>118m</td>
+                    <td>20th Century Fox</td>
+                </tr>
+                <tr>
+                    <td>Warcraft: The Beginning</td>
+                    <td>3.6/5</td>                     
+                    <td><span class="plot">........... ................................................... ............................... ............................................... .............</span></td>
+                    <td>PG-13</td>
+                    <td>Action; Adventure; Science-Fiction; Fantasy</td>
+                    <td>Duncan Jones</td>
+                    <td>Duncan Jones, Charles Leavitt</td>
+                    <td>Jun 10 2016</td>
+                    <td>Sep 27 2016</td>
+                    <td>NA</td>
+                    <td>100m</td>
+                    <td>Universal Pictures</td>
+                </tr>
+                <tr>
+                    <td>Citizen Kane</td>
+                    <td>4.1/5</td> 
+                    <td class="plot">This is the labyrinthe study of the life of a newspaper tycoon.</td>
+                    <td>PG</td>
+                    <td>Classics; Drama; Mystery</td>
+                    <td>Orson Welles</td>
+                    <td>Orson Welles; Herman J. Mankiewicz</td>
+                    <td>May 1 1941</td>
+                    <td>Sep 25 2001</td>
+                    <td>NA</td>
+                    <td>119m</td>
+                    <td>RKO Radio Pictures</td>
+                </tr>
+            </table>
+        </div>
+	</div>
+	<div class="clear"></div>
+	<footer>
+		<div class="presentation">
+			<h3>About us :</h3>
+			<p>ShareSpace is a website made for sharing of personnal or professional reviews. We also wish to provide a space to share playlists of movies with friends, or the general public all the same.</p>
+			<p>The creator of this website is Joseph Sallembien, student of HEI engineering school. He was tasked with it's creation for a class project. The objective was to create a website from scratch without using any premade code or bootstrap. Furthermore, we wished to create it without template whatsoever to show the full extent of possibilities from simple typing in simple txt files!</p>
+			<p>All rights reserved...</p>
+		</div>
+		<div class="bottom-nav">
+			<h3>Sitemap :</h3>
+			<nav>
+				<a href="home2.html">Home</a>
+				<a href="movie-list.html">Movie List</a>
+				<a href="playlist.html">Playlists</a>
+				<a href="contact.html"> Contact us</a>
+				<a href="legal-notice.html">Legal Notice</a>
+			</nav>
+		</div>
+	</footer>
+</body>
+</html>
