@@ -2,7 +2,7 @@
 
 This is a project for my Web Dev class.
 
-How to use:
+How to use: /n
 1. import as a Maven project in your Java (J2E) Editor.
 2. open your sql database (or create it)
 3. enter the correct information in src\main\resources\jdbc.properties
