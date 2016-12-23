@@ -2,6 +2,8 @@
 
 This is a project for my Web Dev class.
 
+The latest version to use is in "rendu 2/ShareSpace" .
+
 ## How to use:
 
 1. import as a Maven project in your Java (J2E) Editor.
