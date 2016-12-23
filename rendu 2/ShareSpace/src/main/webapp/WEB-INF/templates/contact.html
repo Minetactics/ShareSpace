@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>ShareSpace</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/data.css">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+	<meta name="description" content="Le site ShareSpace est un lieu d'echange entre internautes cinephiles! Contact us here...">
+</head>
+<body>
+    <header th:insert="~{common.html :: header}">
+	</header>
+	<div id="body">
+		<div class="middle-box">
+            <div class="contact-form">
+                <form>
+                    <h2>Contact us: </h2>
+                    <div class="form-line"><span class="contact-form">Name :</span><input type="text" name="first-name" class="text-query" placeholder="Enter name..." required><span class="required">*</span></div>
+                    <div class="form-line"><span class="contact-form">E-mail address :</span><input type="email" name="email-adress" class="text-query" placeholder="Enter e-mail adress" required><span class="required">*</span></div>
+                    <div class="form-line-textarea"><span class="contact-form">Leave a comment :</span><textarea name="contact-comment" rows="20" cols="50" class="text-query" placeholder="Add a comment here..." required></textarea><span class="required">*</span></div>
+                    <div class="form-line"><input type="submit" value="submit" id="submit-button"></div>
+                </form>
+            </div>
+        </div>
+	</div>
+	<div class="clear"></div>
+	<footer th:insert="~{common.html :: footer}">
+	</footer>
+</body>
+</html>

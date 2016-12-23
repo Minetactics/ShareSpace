@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>ShareSpace</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="css/data.css">
+<link rel="stylesheet" type="text/css" href="css/form.css">
+<meta name="description"
+	content="Le site ShareSpace est un lieu d'echange entre internautes cinephiles! Your personnal profile is here to help you...">
+</head>
+<body>
+	<header th:insert="~{common.html :: header}"> </header>
+
+	<div id="body">
+		<div class="middle-box" style="height: 400px">
+			<div style="margin-left: 50px">
+				<h1>Connect here :</h1>
+				<form method="post">
+					<div class="form-line">
+						<span>Identifiant :</span><input type="text" name="identifiant"
+							placeholder="identifiant">
+					</div>
+					<div class="form-line">
+						<span>Mot de Passe :</span><input type="password" name="password"
+							placeholder="mot de passe">
+					</div>
+					<div class="form-line">
+						<span></span><input type="submit" value="Se connecter">
+					</div>
+				</form>
+				
+				On pouvait imaginer ici un ecran de connexion vers My Playlist. En fonction de l'utilisateur connecte.
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<footer th:insert="~{common.html :: footer}"> </footer>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>ShareSpace</title>
+
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="css/data.css">
+<link rel="stylesheet" type="text/css" href="css/form.css">
+<meta name="description"
+	content="Le site ShareSpace est un lieu d'echange entre internautes cinephiles! Les playlist des internautes...">
+<script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=31904747297"; fjs.parentNode.insertBefore(js, fjs);}
+		(document, 'script', 'facebook-jssdk')); </script>
+<script src="script/Navmenutop.js"></script>
+</head>
+
+<body>
+	<div id="fb-root"></div>
+	<header th:insert="~{common.html :: header}"> </header>
+	<div id="body">
+		<div class="middle-box" id="left-box">
+			<div id="create-playlist">
+				<form id="playlist-form" method="post" action="newplaylist">
+					<div class="form-line">
+						<span class="entete">Enter the name of the playlist :</span><input
+							type="text" name="playlist-name" placeholder="Insert name here"
+							class="playlist-form" required><span class="required">*</span>
+					</div>
+					<div class="form-line">
+						<span class="entete">Creator of the playlist :</span><input
+							type="text" name="playlist-creator"
+							placeholder="Insert your name here"> (max. 20)
+					</div>
+					<div class="form-line-bigger">
+						<span id="NewMovie" class="entete">Add a movie :</span> <span
+							th:each="film : ${films}" class="genre"> <input
+							type="checkbox" th:name="${film.id}">[[${film.title}]]
+						</span>
+						<!--Les options sont transmises depuis le serveur-->
+						<span class="required">*</span>
+					</div>
+					<div class="form-line">
+						<span class="entete"> Add a description : </span><input
+							type="text" name="playlist-description"
+							placeholder="Add a description to your playlist...">
+						(max. 200 words)
+					</div>
+					<div class="form-line-submit">
+						<span><input type="submit" value="Create!"
+							name="playlist-create"></span>
+					</div>
+				</form>
+			</div>
+			<div id="playlist-created">
+				<!-- Here we will pass through the created playlist from the doPost on the /addplaylist webservlet -->
+				<!-- Trigger/Open The Modal -->
+				<div class="form-line">
+					<span><button id="myBtn">Share</button></span>
+				</div>
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+					<!-- Modal content -->
+					<div class="modal-content">
+						<div class="modal-header">
+							<span class="close">x</span>
+							<h2>Share with:</h2>
+						</div>
+						<div class="modal-body">
+							<p>By Facebook :</p>
+							<div class="fb-share-button"
+								data-href="http://sharespace.com/playlist/" data-layout="button"
+								data-size="large" data-mobile-iframe="true">
+								<a class="fb-xfbml-parse-ignore" target="_blank"
+									href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsharespace.com%2Fplaylist%2Fget-%24%257Bplaylist%257D&amp;src=sdkpreparse">Share</a>
+							</div>
+							<p>By Google+ :</p>
+							<div class="g-plus" data-action="share" data-annotation="bubble"
+								data-href="http://sharespace.com/playlist/"></div>
+							<script type="text/javascript">
+                                window.___gcfg = {lang: 'fr'};
+
+                                (function() {
+                                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                    po.src = 'https://apis.google.com/js/platform.js';
+                                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                                })();
+                            </script>
+							<p>By URL :</p>
+							<div class="url-share">
+								<a href="http://sharespace.com/playlist/">http://sharespace.com/playlist/</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script src="script/Modalappear.js">
+                </script>
+			</div>
+		</div>
+		<div class="middle-box" id="right-box">
+			<hr color="black" width="80%" size="0.5">
+			<div class="search-bar">
+					<span>Search for a playlist :<input type="search"
+						name="movie-search" placeholder="Search..." onkeyup="searchP()" id="mySearcher"></span> 
+						<input type="image" width="100" value="submit" src="img/search-off.png"
+							alt="submit Button" onMouseOut="this.src='img/search-off.png';"
+							onMouseOver="this.src='img/search-on.png';" id="search-icon" >
+			</div>
+		</div>
+		<div class="playlist-table">
+			<table id="table">
+				<tr>
+					<th>Nom de Playlist</th>
+					<th>Image</th>
+					<th>Createur</th>
+					<th>Description</th>
+					<th>Taille</th>
+					<th>Liste des films</th>
+				</tr>
+				<tr th:each="playlist : ${playlists}">
+					<td th:text="${playlist.name}"></td>
+					<td><img alt="Image de couverture" th:src="${playlist.image}" class="cover-playlist"></td>
+					<td th:text="${playlist.creator}"></td>
+					<td th:text="${playlist.description}"></td>
+					<td th:text="${playlist.size}"></td>
+					<td th:text="${playlist.nameFilm}"></td>
+					<td><form method="post" action="deleteplaylist"><input type="text" th:value="${playlist.id}" name="id" style="display: none"><input type="submit" value="delete"></form></td>
+				</tr>
+			</table>
+			<script src="script/Searchintable.js"></script>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<footer th:insert="~{common.html :: footer}"> </footer>
+</body>
+</html>

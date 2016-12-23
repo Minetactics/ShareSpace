@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Fragments</title>
+</head>
+<body>
+<header th:fragment ="header">
+        <ul class="topnav" id="myTopnav">
+            <li><a class="active" href="home" id="home-icon"><img src="img/home-grey.png"></a></li>
+            <li><a href="playlist">Playlist</a></li>
+            <li><a href="movie-list">Movies</a></li>
+            <li><a href="profile">Profile</a></li>
+            <li class="icon">
+                <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+            </li>
+        </ul>
+    </header>
+ 
+	<footer th:fragment ="footer">
+		  <div class="presentation">
+              <h3>About us :</h3>
+              <p>ShareSpace is a website made for sharing of personnal or professional reviews. We also wish to provide a space to share playlists of movies with friends, or the general public all the same.</p>
+              <p>The creator of this website is Joseph Sallembien, student of HEI engineering school. He was tasked with it's creation for a class project. The objective was to create a website from scratch without using any premade code or bootstrap. Furthermore, we wished to create it without template whatsoever to show the full extent of possibilities from simple typing in simple txt files!</p>
+              <p>All rights reserved...</p>
+		  </div>
+		  <div class="bottom-nav" id="myBotNav">
+			 <h3>Sitemap :</h3>
+                <nav>
+				    <a href="home">Home</a>
+				    <a href="movie-list">Movie List</a>
+                    <a href="playlist">Playlists</a>
+				    <a href="contact"> Contact us</a>
+                <a href="legal-notice">Legal Notice</a>
+			 </nav>
+		  </div>
+	</footer>
+</body>
+</html>

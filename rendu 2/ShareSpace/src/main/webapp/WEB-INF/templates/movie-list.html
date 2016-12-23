@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>ShareSpace</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/data.css">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+	<meta name="description" content="Le site ShareSpace est un lieu d'echange entre internautes cinephiles! This is the home of a movie database of over...">
+</head>
+<body>
+	    <header th:insert="~{common.html :: header}">
+	    </header>
+	<div id="body">
+            <div class="add-movie">
+                <span>Add a movie : <button id="myBtn"><img id="add-movie" src="img/Add-movie.png"></button></span>
+            </div>
+                <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">X</span>
+                            <h2>Add a Movie </h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-content" id="new-movie-modal">
+                                <form id="add-movie" method="post" action="addmovie" >
+                                    <div class="form-line"><span class="entete">Movie Name :</span><input type="text" name="new-movie-name" placeholder="Add movie name" required><span class="required">*</span></div>
+                                    <div class="form-line"><span class="entete">Rate on a Scale 0 to 5 :</span><input type="number" min="0" max="5" step="0.01" name="new-movie-starrate" placeholder="Add your rating" required><span class="required">*</span></div>
+                                    <div class="form-line"><span class="entete">Plot :</span><input type="text" name="new-movie-plot" placeholder="Add the plot" required><span class="required">*</span></div>
+                                    <div class="form-line"><span class="entete">Rating</span> 
+                                        <select  name="new-rating" required>
+                                            <option value="G">G</option>
+                                            <option value="PG">PG</option>
+                                            <option value="PG-13">PG-13</option>
+                                            <option value="NC-17">NC-17</option>
+                                            <option value="R">R</option>
+                                            <option value="U">Unknown</option>
+                                        </select>
+                                        <span class="required">*</span>
+                                    </div>
+                                    <div class="form-line-bigger" ><span class="entete">Select a Genre (at least one) :</span>
+                                    <span th:each="genre : ${genres}" class="genre"> 
+                                        <input type="checkbox" th:name="${genre.id}"> 
+                                         [[${genre.name}]]
+                                        </span><span class="required">*</span>
+                                    </div>
+                                    <div class="form-line"><span class="entete">Director :</span><input type="text" name="new-movie-dir" placeholder="Add movie director" required><span class="required">*</span></div>
+                                    <div class="form-line"><span class="entete">Release Date :</span><input type="date" name="new-movie-reldate" placeholder="Add release date" required><span class="required">*</span></div>
+                                    <div class="form-line"><span class="entete">Dvd Date :</span><input type="date" name="new-movie-dvddate" placeholder="Add DVD release date" required><span class="required">*</span></div>
+                                    <div class="form-line"><span class="entete">Box Office (in thousand dollars):</span><input type="number" name="new-movie-bo" placeholder="Enter boxoffice" required><span class="required">*</span></div>
+                                    <div class="form-line"><span class="entete">Runtime (in minutes):</span><input type="number" name="new-movie-run" placeholder="Add movie runtime" required><span class="required">*</span></div>
+                                    <div class="form-line"><span class="entete">Studio :</span><input type="text" name="new-movie-studio" placeholder="Add movie studio" required><span class="required">*</span></div>
+                                    <div class="ajout-film-btn"><input type="submit" value="Add New Movie!"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="script/Modalappear.js">
+                </script>
+        <div class="full-box">
+            <table id="database">
+                <tr>
+                    <th>Title</th>
+                    <th>StarRating</th>
+                    <th>Plot</th>
+                    <th>Rating</th>
+                    <th>Genre</th>
+                    <th>Director</th>
+                    <th>TheaterDate</th>
+                    <th>DVDDate</th>
+                    <th>BoxOffice</th>
+                    <th>Runtime</th>
+                    <th>Studio</th>
+                </tr>
+                <tr th:each="film : ${films}">
+                    <td th:text="${film.title}"></td>
+                    <td th:text="${film.starRating}"></td> 
+                    <td><span class="plot" th:text="${film.plot}"></span></td>
+                    <td th:text="${film.rating}"></td> 
+                    <td th:text="${film.nameGenre}"></td>
+                    <td th:text="${film.director}"></td>
+                    <td th:text="${#temporals.format(film.releaseDate, 'dd MMM yyyy')}"></td>
+                    <td th:text="${#temporals.format(film.dvdDate, 'dd MMM yyyy')}"></td>
+                    <td th:text="${film.boxoffice}"></td>
+                    <td th:text="${film.runtime}"></td>
+                    <td th:text="${film.studio}"></td>
+                </tr>
+            </table>
+        </div>
+	</div>
+	<div class="clear"></div>
+	<footer th:insert="~{common.html :: footer}">
+	</footer>
+</body>
+</html>

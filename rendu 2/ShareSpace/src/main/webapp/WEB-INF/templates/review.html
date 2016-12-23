@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>ShareSpace</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/data.css">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+	<meta name="description" content="Le site ShareSpace est un lieu d'echange entre internautes cinephiles! Find a review or let one for any movie...">
+</head>
+<body>
+	    <header th:insert="~{common.html :: header}">
+	    </header>
+	<div id="body">
+        <div class="full-body">
+            <div class="review-search">
+                <h2>Search for a Movie to get a review :</h2>
+                <form name="someform" method="get" class="search">
+                    <span>Search for a movie :<input type="search" name="movie-search" placeholder="Search..."></span>
+                    <input type="image" width="100" value="submit" src="img/search-off.png" alt="submit Button" onMouseOut="this.src='img/search-off.png';" onMouseOver="this.src='img/search-on.png';" id="search-icon">
+                </form>
+            </div>
+            <div class="review-result">
+                <h2>The Movie Review</h2>
+                <article> Ici les films apparaitront en résultat...
+                    <h3>Le titre du film</h3>
+                    <img src="img/${film-trouve}.jpg" alt="Cover de ${film-trouve}">
+                    <p><strong>Star-Rating :</strong> ${rating}/5</p>
+                    <p><strong>Review :</strong> blablablabla</p>
+                </article>
+            </div>
+        </div>
+	</div>
+	<div class="clear"></div>
+	<footer th:insert="~{common.html :: footer}">
+	</footer>
+</body>
+</html>
