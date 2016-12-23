@@ -1,8 +1,8 @@
-# repoprojo
+# ShareSpace Project
 
 This is a project for my Web Dev class.
 
-How to use:
+## How to use:
 
 1. import as a Maven project in your Java (J2E) Editor.
 
@@ -14,4 +14,4 @@ How to use:
 
 5. run the second query to fill the database (filepath: src\main\webapp\DBpopulate.sql
 
-Thanks!
+## Thanks!
